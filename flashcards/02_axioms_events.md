@@ -253,3 +253,9 @@ S:
 
 Q: When is using the complement $P(A) = 1 - P(A^c)$ more efficient than counting $A$ directly?
 A: When $A^c$ has far fewer outcomes to enumerate, typically for "at least one" events. The complement "none" is usually a single simple condition, while "at least one" splits into many cases. Counting the single case and subtracting from 1 is faster and less error-prone.
+
+Q: A problem asks for "probability of at least one X in $n$ independent trials" with per-trial probability $p$. What's the pattern?
+A: Complement: $1 - P(\text{no X in } n \text{ trials}) = 1 - (1-p)^n$, where $p$ is the per-trial probability of X and the trials are independent.
+
+Q: A problem says "at least $k$ successes" but $k$ is much larger than 1. Should you still use the complement?
+A: No — only when $k = 1$ (or near-extreme) does the complement collapse to a single case. For general "at least $k$", sum the binomial PMF directly: $\sum_{j=k}^{n} \binom{n}{j} p^j (1-p)^{n-j}$.
